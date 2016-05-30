@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+<title>云南大学法学院</title>
+<link rel="stylesheet" href="css/layout.css" type="text/css" />
+<link rel="stylesheet" href="css/kickstart.css" media="all" />
+</head>
+  #parse("new-header.vm")      
+  #parse("new-left1.vm")
+<div class="con-list col_9 column">
+      <!-- Breadcrumbs -->
+      <ul class="breadcrumbs">
+         #foreach($channel in $cms.getPathChannels($curChannel))
+        <li><a href="$cms.getUrl($channel)">$channel.title</a></li>
+        #end
+      </ul>
+      <ul class="articlelist alt">
+ #foreach($article in $cms.getPageContents($curChannel,$curPage))
+	<li><span>[$cms.format($article.publishDate,"yyyy/MM/dd")]</span><a title="$article.name" href="$cms.getUrl($article)" target="_blank">#summary($article.name 35)</a></li>
+#end
+      </ul>
+      <div class="page-nav">
+      <span><a href="$cms.getIndexFileName($curChannel, 1)">首 &nbsp; 页</a></span>
+      <span><a href="$cms.getIndexFileName($curChannel, $prePage)">上一页</a></span>
+      <span class="next"><a href="$cms.getIndexFileName($curChannel, $nextPage)">下一页</a></span>
+      <span class="last-page"><a href="$cms.getIndexFileName($curChannel, $totalPage)">尾 &nbsp; 页</a></span>
+    </div>
+    </div>
+  </div>
+  #parse("new-footer.vm")  
+</body></html>

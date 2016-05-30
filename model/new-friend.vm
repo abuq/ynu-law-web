@@ -1,0 +1,10 @@
+
+ <div class="frlink col_12 column">
+    <hr class="alt2" />
+    <h7>友情链接</h7>
+    <ul class="clearfix">
+			#foreach($article in $cms.getContents("友情链接",9))
+				<li><a href="$cms.getUrl($article)">$article.name</a></li>
+			#end
+		</ul>
+  </div>

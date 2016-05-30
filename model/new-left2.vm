@@ -1,0 +1,11 @@
+
+<div class="list-left col_3 column">
+      <div id="firstpane" class="menu_list">
+         <h3 class="menu_head current">$curChannel.parent.title</h3>
+          <div style="display:block" class="menu_body">
+           #foreach($channel in $cms.getChildren($curChannel.parent))
+            <a href="$cms.getUrl($channel)">$channel.title</a>
+               #end                                  
+          </div>
+      </div>
+    </div>

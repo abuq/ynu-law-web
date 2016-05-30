@@ -1,0 +1,24 @@
+
+  <div class="footcon col_12 column">
+  <div class="foot col_7 column">
+      <!-- Address -->
+      <h6>云南大学法学院</h6>
+      <address><p>
+        地址：昆明市呈贡区大学城云南大学(呈贡校区)法学楼<br />
+        邮件：lawschool@ynu.edu.cn<br />
+        电话：65935848（党办），65033171(院办)，65036550(教务办)，65033627(研究生办)<br />
+        技术支持：云南大学信息技术中心<br />
+      </p>
+    </address>
+  </div>
+  <div class="qrcode col_4 column">
+      <img src="img/weibo.png" class="qr1" title="微博">
+      <img src="img/weixin.png" class="qr2" title="微信">
+  </div>
+</div>
+
+</div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/kickstart.js"></script>
+</body>
+</html>

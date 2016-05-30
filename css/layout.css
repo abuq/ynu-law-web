@@ -37,6 +37,7 @@ a{
 }
 .top-con{
 	background: #fff url(img/top.png) no-repeat;
+  background-position:center;
 }
 #search{
   float:right;

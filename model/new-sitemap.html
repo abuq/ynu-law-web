@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+<title>云南大学法学院</title>
+<link rel="stylesheet" href="css/layout.css" type="text/css" />
+<link rel="stylesheet" href="css/kickstart.css" media="all" />
+</head>
+  #parse("new-header.vm")   
+  #parse("new-left2.vm")    
+<div class="con-list col_9 column">
+      <!-- Breadcrumbs -->
+      <ul class="breadcrumbs">
+         #foreach($channel in $cms.getPathChannels($curChannel))
+        <li><a href="$cms.getUrl($channel)">$channel.title</a></li>
+        #end
+      </ul>
+      <h5 class="center">$curArticle.name</h5>
+<style type="text/css">
+.sitemap li{float:left;list-style:none;padding:10px;margin-left:20px;}
+.sitemap a{color:#000;text-decoration: none;}
+.sitemap a:hover{color:#00518f;}
+</style>
+        <ul class="sitemap clearfix">
+      #foreach($channel in $cms.getChildren($curChannel.parent))
+#foreach($channel1 in $cms.getChildren($channel,0,1))
+            <li><a href="$cms.getUrl($channel1)">$channel.title</a></li>
+            #foreach($channel in $cms.getChildren("$channel.title"))
+	       <li><a href="$cms.getUrl($channel)">$channel.title</a></li>
+	       #end
+#end  
+#end       
+         </ul>                     
+      </p>
+    </div>
+  </div>
+  #parse("new-footer.vm")
+</body></html>

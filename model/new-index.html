@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+<title>云南大学法学院</title>
+<link rel="stylesheet" href="css/layout.css" type="text/css" />
+<link rel="stylesheet" href="css/kickstart.css" media="all" />
+</head>
+  #parse("new-header.vm")       
+<!-- 幻灯 -->
+    <ul class="slideshow">
+       <li><img src="img/flash1.png"/></li>
+       <li><img src="img/flash2.png"/></li>
+       <li><img src="img/flash3.png"/></li>
+    </ul>
+  <div class="conleft col_4 column">
+    <!-- List Alternative Style -->
+    <h6>学院新闻</h6>
+    <span class="more"><a href="$cms.getUrl("学院新闻")">More</a></span>
+    <hr class="alt1" />
+    <ul class="alt">
+#foreach($article in $cms.getContents("学院新闻",3)) 
+      <li><a href="$cms.getUrl($article)">#summary($article.name 20)</a></li>
+ #end
+    </ul>
+  </div>
+  <div class="conmid col_4 column">
+    <!-- List Alternative Style -->
+    <h6>通知公告</h6>
+    <span class="more"><a href="$cms.getUrl("通知公告")">More</a></span>
+    <hr class="alt1" />
+    <ul class="alt">
+#foreach($article in $cms.getContents("通知公告",3)) 
+      <li><a href="$cms.getUrl($article)">#summary($article.name 20)</a></li>
+ #end
+    </ul>
+  </div>
+  <div class="conright col_4 column">
+    <!-- List Alternative Style -->
+    <h6>科研动态</h6>
+   <span class="more"><a href="$cms.getUrl("科研动态")">More</a></span>
+    <hr class="alt1" />
+    <ul class="alt">
+#foreach($article in $cms.getContents("科研动态",3)) 
+      <li><a href="$cms.getUrl($article)">#summary($article.name 23)</a></li>
+ #end
+    </ul>
+  </div>
+  <div class="conmid col_4 column">
+    <!-- List Alternative Style -->
+    <h6>学生风采</h6>
+      <span class="more"><a href="$cms.getUrl("学生社团")">More</a></span>
+    <hr class="alt1" />
+    <ul class="alt">
+#foreach($article in $cms.getContents("学生社团",3)) 
+      <li><a href="$cms.getUrl($article)">#summary($article.name 20)</a></li>
+ #end
+    </ul>
+  </div>
+  <div class="conmid col_4 column">
+    <!-- List Alternative Style -->
+    <h6>就业招聘</h6>
+    <span class="more"><a href="$cms.getUrl("就业动态")">More</a></span>
+    <hr class="alt1" />
+    <ul class="alt">
+#foreach($article in $cms.getContents("就业动态",3)) 
+      <li><a href="$cms.getUrl($article)">#summary($article.name 20)</a></li>
+ #end
+    </ul>
+  </div>
+  <div class="conmid col_4 column">
+    <!-- List Alternative Style -->
+    <h6>专题介绍</h6>
+    <span class="more"><a href="$cms.getUrl("专题介绍")">More</a></span>
+    <hr class="alt1" />
+    <ul class="alt">
+  #foreach($article in $cms.getContents("专题介绍",3)) 
+      <li><a href="$cms.getUrl($article)">#summary($article.name 20)</a></li>
+ #end
+    </ul>
+  </div>
+  </div>
+  #parse("new-index-footer.vm")
+</body></html>

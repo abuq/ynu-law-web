@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+<title>云南大学法学院</title>
+<link rel="stylesheet" href="css/layout.css" type="text/css" />
+<link rel="stylesheet" href="css/kickstart.css" media="all" />
+</head>
+  #parse("new-header.vm")   
+  #parse("new-left2.vm")    
+<div class="con-list col_9 column">
+      <!-- Breadcrumbs -->
+      <ul class="breadcrumbs">
+         #foreach($channel in $cms.getPathChannels($curChannel))
+        <li><a href="$cms.getUrl($channel)">$channel.title</a></li>
+        #end
+      </ul>
+      <h5 class="center">$curArticle.name</h5>
+      <p>$!{curArticle.content}</p>
+#if ($cmsService.getArticleAttachmentCount($curArticle.ID, 3)>0)
+      <p>相关附件:<br >
+	<dl>
+	#foreach($doc in $cms.getAttachments($curArticle))
+	<dd>
+	<a title="$doc.srcFile" href="$cms.getUrl($doc)" target="_blank">$doc.srcFile</a>						  
+	</dd>
+	#end
+	</dl>
+      </p>
+#end
+    </div>
+  </div>
+  #parse("new-footer.vm")
+</body></html>
