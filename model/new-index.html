@@ -75,10 +75,12 @@
     <h6>专题介绍</h6>
     <span class="more"><a href="$cms.getUrl("专题介绍")">More</a></span>
     <hr class="alt1" />
-    <ul class="alt">
-  #foreach($article in $cms.getContents("专题介绍",3)) 
-      <li><a href="$cms.getUrl($article)">#summary($article.name 20)</a></li>
- #end
+    <ul class="slideshow">
+       #foreach($article in $cms.getContents("专题介绍", 3))
+       #if ($cms.hasPicture($article))
+        <li><a href="$cms.getUrl($article)"><img src="$cms.getPictureUrl($article)"/></a></li>
+       #end
+       #end
     </ul>
   </div>
   </div>
